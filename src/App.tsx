@@ -7,19 +7,24 @@ import DestinationsPage from './pages/DestinationsPage';
 import ConverterPage from './pages/ConverterPage';
 import PlannerPage from './pages/PlannerPage';
 
+import { Analytics } from "@vercel/analytics/next"
+
 function App() {
   return (
-    <AnimatePresence mode="wait">
-      <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route index element={<HomePage />} />
-          <Route path="checklist" element={<ChecklistPage />} />
-          <Route path="destinations" element={<DestinationsPage />} />
-          <Route path="converter" element={<ConverterPage />} />
-          <Route path="planner" element={<PlannerPage />} />
-        </Route>
-      </Routes>
-    </AnimatePresence>
+    <>
+      <AnimatePresence mode="wait">
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route index element={<HomePage />} />
+            <Route path="checklist" element={<ChecklistPage />} />
+            <Route path="destinations" element={<DestinationsPage />} />
+            <Route path="converter" element={<ConverterPage />} />
+            <Route path="planner" element={<PlannerPage />} />
+          </Route>
+        </Routes>
+      </AnimatePresence>
+      <Analytics />
+    </>
   );
 }
 
